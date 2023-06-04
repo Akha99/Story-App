@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="32dp"
+    tools:context=".ui.user.RegisterActivity"
+    >
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_height="120dp"
+        android:layout_width="120dp"
+        android:alpha="0"
+        app:layout_constraintBottom_toTopOf="@id/et_name"
+        android:src="@drawable/icon_app"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/tv_story"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:alpha="0"
+        android:fontFamily="@font/aguafina_script"
+        android:text="@string/app_name"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/et_name"
+        app:layout_constraintTop_toBottomOf="@id/icon"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <com.amb.dailysnap2.customview.UsernameTField
+        android:id="@+id/et_name"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:hint="@string/name"
+        android:alpha="0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <com.amb.dailysnap2.customview.EmailTField
+        android:id="@+id/et_email"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:alpha="0"
+        android:layout_marginTop="16dp"
+        android:hint="@string/email"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:inputType="textEmailAddress"
+        app:layout_constraintTop_toBottomOf="@id/et_name"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <com.amb.dailysnap2.customview.PasswordTField
+        android:id="@+id/et_pass"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:alpha="0"
+        android:layout_marginTop="16dp"
+        android:hint="@string/password"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_email"
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_signup"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginTop="16dp"
+        android:alpha="0"
+        app:cornerRadius="20dp"
+        android:text="@string/sign_up"
+        app:layout_constraintTop_toBottomOf="@id/et_pass"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/tv_have_acc"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="16dp"
+        android:alpha="0"
+        android:text="@string/already_have_an_account"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/btn_signup"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/tv_login"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="8dp"
+        android:alpha="0"
+        android:text="@string/login"
+        android:textColor="@color/purple_700"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@id/tv_have_acc"
+        app:layout_constraintTop_toBottomOf="@id/btn_signup"
+        />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/progress_bar"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_centerHorizontal="true"
+        android:visibility="invisible"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:lottie_loop="true"
+        app:lottie_autoPlay="true"
+        app:lottie_fileName="loading1.json"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

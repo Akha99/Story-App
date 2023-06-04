@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.story.MainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/custom_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/aguafina_script"
+            android:text="@string/app_name"
+            android:layout_gravity="center"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_story"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="64dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="2"
+        tools:listitem="@layout/item_story" />
+
+    <com.github.clans.fab.FloatingActionMenu
+        android:id="@+id/fab_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        fab:menu_animationDelayPerItem="50"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="26dp"
+        fab:menu_backgroundColor="@android:color/transparent"
+        fab:menu_buttonSpacing="0dp"
+        fab:menu_colorPressed="@color/white"
+        fab:menu_colorRipple="#d1c2c2"
+        fab:menu_fab_size="normal"
+        fab:menu_colorNormal="@color/white"
+        fab:menu_icon="@drawable/ic_baseline_dashboard_customize_24"
+        fab:menu_labels_colorNormal="#666666"
+        fab:menu_labels_singleLine="false"
+        fab:menu_labels_cornerRadius="3dp"
+        fab:menu_labels_ellipsize="none"
+        fab:menu_labels_padding="8dp"
+        fab:menu_labels_margin="0dp"
+        fab:menu_labels_maxLines="-1"
+        fab:menu_labels_paddingTop="6dp"
+        fab:menu_labels_paddingLeft="10dp"
+        fab:menu_labels_paddingRight="10dp"
+        fab:menu_labels_paddingBottom="6dp"
+        fab:menu_labels_position="left"
+        fab:menu_labels_showShadow="false"
+        fab:menu_labels_textColor="#FFFFFF"
+        fab:menu_showShadow="false"
+        fab:menu_labels_textSize="14sp"
+        fab:menu_openDirection="up"
+        fab:menu_shadowRadius="1dp"
+        >
+
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fab_log_out"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_colorPressed="@color/purple_200"
+            android:src="@drawable/ic_baseline_exit_to_app_24"
+            app:fab_colorNormal="@color/white"
+            fab:fab_label="@string/logout"
+            fab:fab_size="mini" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fab_setting"
+            android:layout_width="wrap_content"
+            app:fab_colorNormal="@color/white"
+            app:fab_colorPressed="@color/purple_200"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_settings_24"
+            fab:fab_label="@string/setting"
+            fab:fab_size="mini"
+            />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fab_maps"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            app:fab_colorPressed="@color/purple_200"
+            android:src="@drawable/ic_baseline_map_24"
+            fab:fab_label="@string/maps"
+            app:fab_colorNormal="@color/white"
+            fab:fab_size="mini"
+            />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:id="@+id/fab_add_story"
+            android:src="@drawable/ic_baseline_camera_alt_24"
+            android:layout_height="wrap_content"
+            app:fab_colorPressed="@color/purple_200"
+            app:fab_colorNormal="@color/white"
+            fab:fab_label="@string/add_story"
+            fab:fab_size="mini"
+            />
+
+    </com.github.clans.fab.FloatingActionMenu>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/progress_bar"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        android:layout_centerHorizontal="true"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_fileName="loading3.json"
+        app:lottie_loop="true"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
